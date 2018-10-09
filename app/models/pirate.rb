@@ -4,12 +4,15 @@ class Pirate
 
 	@@all = []
 
-	def initialize
-		@ships = []
+	def initialize(pirate)
+		@name, @weight, @height = pirate[:name],pirate[:weight],pirate[:height]
+		@ships = pirate[:ships].map do |ship|
+			Ship.new(ship)
+		end
 		@@all << self
 	end
 
-	def set_params(*arg)
+	def set_params(arg)
 		name = arg[0]
 		weight = arg[1]
 		height = arg[2]

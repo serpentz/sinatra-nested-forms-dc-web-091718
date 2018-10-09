@@ -3,11 +3,11 @@ class Ship
 
 	@@all = []
 
-	def initialize(*arg)
-		@booty, @type, @name = arg[0],arg[1],arg[2]
+	def initialize(arg)
+		@booty, @type, @name = arg[:name],arg[:type],arg[:booty]
 		Ship.all<<self
 	end
-	
+
 	def self.all 
 		@@all
 	end
